@@ -1,0 +1,14 @@
+2
+//////////////////////////
+AnimationOne
+AnimationTwo
+1.0
+Range
+0
+9
+///////////////////////////
+AnimationTwo
+NONE
+0.1
+Sequence
+10,12,15,11,13,14;

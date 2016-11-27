@@ -1,0 +1,61 @@
+/*
+Copyright(c) 2016 RafalRebisz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files(the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions :
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+
+
+This file represents the "TileSheetSprite"  tiles file layout
+
+Rules:
+1. first line in file should be a number of tiles to be created
+2. Separation lines can be left blank, however they must be present and CANNOT contain white spaces !!! or error will occur !!!
+
+NOTE:
+one separation line must be present between number of tiles value, and one line separating each tile data
+
+file layout:
+
+first line of file is number of tiles definitions in file,
+second line is the separation line this will be discarded, it can be left blank but must be present,
+after separation line the tile data definition begins, tile data is defined as RECT structure and it is 
+represented by four values left, right, top, bottom
+
+left and right values are defined at first line, top and bottom values are defined at second line
+values must be separated by blank space and the values must be also within the tile sheet sprite size
+
+
+file layout example:
+
+1. Number of tiles
+****Separation-Line****will-be-discarded****can-be-left-blank****
+2. RECT.left RECT.right
+3. RECT.top RECT.bottom
+
+
+To load 2 tiles you can simply do
+
+2
+****Separation-Line****will-be-discarded****can-be-left-blank****
+0 100
+0 100
+****Separation-Line****will-be-discarded****can-be-left-blank****
+200 250
+200 250
+
+you can also load multiple files by multiple calls to "LoadTilesFromFile(std::string fileName)"
+tiles from separated files are concatenated to currently existing ones, to delete tiles you can call DeleteTiles(void)

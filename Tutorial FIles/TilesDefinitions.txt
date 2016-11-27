@@ -1,0 +1,16 @@
+5
+Define-tile-index-0
+0 50
+0 50
+Define-tile-index-1
+0 50
+50 100
+Define-tile-index-15
+150 200
+150 200
+Define-tile-index-10
+100 150
+100 150
+Define-tile-index-4
+50 100
+0 50
